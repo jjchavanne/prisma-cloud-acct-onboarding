@@ -1,5 +1,5 @@
 # Onboarding Cloud Accounts to Prisma Cloud
-Series of tutorials for onboarding cloud accounts to Prisma Cloud that includes optional directions on setting up New Cloud Infrastructure with Terraform.
+Instructions for onboarding cloud accounts to Prisma Cloud that includes optional directions on setting up New Cloud Infrastructure with Terraform.
 
 ## Objectives:
 1. [Create New Infrastrucutre](#head1) using Terraform to setup new cloud infrastructure across various major cloud providers (optional)
