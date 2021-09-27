@@ -6,7 +6,7 @@ Instructions for onboarding cloud accounts to Prisma Cloud that includes optiona
 2. [Onboarding Cloud Accounts](#head2) into Prisma Cloud (Cloud Native Security Platform from Palo Alto Networks).
 
 ## 1 - <a name="head1"></a> Create New Infrastructure with Terraform (optional):
-Before onboarding a cloud account, it is recommended you have some minimal infrastructure active on your cloud account.  If you intend to start with any new cloud account(s), you can follow the below tutorials from Hashicorp to create basic infrastructure.  If you are not familiar with Terraform, it is one of the most widely used **Infrastructure as Code** open source software tools and is recommended vs. enabling infrastrucutre manually through a console or Cloud CLI directly.  Terraform is also cloud agnostic and is supported across all the major cloud providers as well tools like Docker, making it a great choice for **IaC tooling**. 
+Before onboarding a cloud account, it is recommended you have some minimal infrastructure active on your cloud account.  If you intend to start with any new cloud account(s), you can follow the below tutorials from Hashicorp to create basic infrastructure.  If you are not familiar with Terraform, it is one of the most widely used **Infrastructure as Code** open source software tools and is recommended vs. enabling infrastrucutre manually through a console or Cloud CLI directly.  Terraform is also cloud agnostic and can be used across all the major cloud providers and even Docker.  Terraform is a great choice for **IaC tooling**. 
 
 ### 1.1 - Setup & Prerequisities
 *The below are based on the Hashicorp Learn Terraform 'Get Started' Tutorials.  
