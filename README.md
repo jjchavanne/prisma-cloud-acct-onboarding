@@ -19,7 +19,7 @@ Under each *'Build Infrastructure'* Tutorial ensure to complete these **Prerequi
 - Relevant Cloud Account credentials required 
 
 ### 1.2 - Building Infrastructure
-Follow the relevant Hashicorp Terraform *'Build Infrastructure'* learn tutorial.  Once you have successfully built some infrastructure, you can move on to the 2nd objective of onboarding a Cloud Account into Prisma Cloud.
+Follow the relevant Hashicorp Terraform ***'Build Infrastructure'*** & ***'Change Infrastructure'*** learn tutorials.  Once you have successfully built some infrastructure, you can move on to the 2nd objective of onboarding a Cloud Account into Prisma Cloud.
 
 ## 2 - <a name="head2"></a> Onboarding Cloud Accounts
 
