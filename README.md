@@ -26,8 +26,8 @@ Follow the relevant Hashicorp Terraform *'Build Infrastructure'* learn tutorial.
 ### 2.1 - Identify or Create Prisma Cloud Account Groups
 Ensure you have identified which Prisma Cloud **Account Group** you will assign your Public Cloud Account to or create a new one.   
    
-To create new groups, refer to: [Create and Manage Account Groups on Prisma Cloud](https://docs.paloaltonetworks.com/prisma/prisma-cloud/prisma-cloud-admin/manage-prisma-cloud-administrators/create-account-groups)
+To create new groups, refer to: [Create and Manage Account Groups on Prisma Cloud](https://docs.paloaltonetworks.com/prisma/prisma-cloud/prisma-cloud-admin/manage-prisma-cloud-administrators/create-account-groups).
 
 ### 2.2 - Cloud Account Onboarding
-Onboard your Cloud Account(s) by following the [Prisma Cloud onboarding documentation](https://docs.paloaltonetworks.com/prisma/prisma-cloud/prisma-cloud-admin/connect-your-cloud-platform-to-prisma-cloud/cloud-account-onboarding.html).
+Onboard your Cloud Account(s) to Prisma Cloud by following: [Cloud Account Onboarding](https://docs.paloaltonetworks.com/prisma/prisma-cloud/prisma-cloud-admin/connect-your-cloud-platform-to-prisma-cloud/cloud-account-onboarding.html).
 
