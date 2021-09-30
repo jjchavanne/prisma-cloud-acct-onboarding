@@ -19,7 +19,7 @@ Doc ref: [Onboard Your Google Cloud Platform (GCP) Account](https://docs.paloalt
 ### Only when all the above is sorted should you proceed with the actual onboarding steps
 [Add Your GCP Project to Prisma Cloud](https://docs.paloaltonetworks.com/prisma/prisma-cloud/prisma-cloud-admin/connect-your-cloud-platform-to-prisma-cloud/onboard-your-gcp-account/add-your-gcp-projects-to-prisma-cloud.html)
 
-Complete Steps 1-6
-At step 7, after downloading the terraform template, review template and make necessary changes such as:
-- disabling/commenting out the enabling of any APIs you do not want used.
-- 
+- Complete Steps 1-6.  
+- At step 7, after downloading the terraform template, review template and make necessary changes such as:
+  - disabling/commenting out the enabling of any APIs you do not want used.
+  - 
