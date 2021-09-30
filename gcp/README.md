@@ -10,13 +10,13 @@ Doc ref: [Onboard Your Google Cloud Platform (GCP) Account](https://docs.paloalt
 
 ## NOTES:
 ### Manual steps (as of now) - all these steps are optional
-1. Creation of GCS bucket for VPC Flow logs - via console - instructions on PC docs not given
-2. Enable VPC Flow logs, logging sink, and assigning lifecycle rule - via console and required for every subnet.  These may already be enabled. - instructions: [Enable Flow Logs for GCP Projects](https://docs.paloaltonetworks.com/prisma/prisma-cloud/prisma-cloud-admin/connect-your-cloud-platform-to-prisma-cloud/onboard-your-gcp-account/enable-flow-logs-for-gcp-projects.html)
-3. Enabling Dataflow API & Assigning role and binding for Dataflow to the service account- via console - instructions: [Flow Log Compression on GCP](https://docs.paloaltonetworks.com/prisma/prisma-cloud/prisma-cloud-admin/connect-your-cloud-platform-to-prisma-cloud/onboard-your-gcp-account/dataflow-compression.html)
+1. Creation of GCS bucket for VPC Flow logs - *via console* - instructions on PC docs not given
+2. Enable VPC Flow logs, logging sink, and assigning lifecycle rule - *via console* and required for every subnet.  These may already be enabled. - instructions: [Enable Flow Logs for GCP Projects](https://docs.paloaltonetworks.com/prisma/prisma-cloud/prisma-cloud-admin/connect-your-cloud-platform-to-prisma-cloud/onboard-your-gcp-account/enable-flow-logs-for-gcp-projects.html)
+3. Enabling Dataflow API & Assigning role and binding for Dataflow to the service account- *via console* - instructions: [Flow Log Compression on GCP](https://docs.paloaltonetworks.com/prisma/prisma-cloud/prisma-cloud-admin/connect-your-cloud-platform-to-prisma-cloud/onboard-your-gcp-account/dataflow-compression.html)
 4. Create network resources for Dataflow (**not clear - investigate**). https://docs.paloaltonetworks.com/prisma/prisma-cloud/prisma-cloud-admin/connect-your-cloud-platform-to-prisma-cloud/onboard-your-gcp-account/dataflow-compression.html
 
 
-### Only when all the above is sorted should you proceed with the actually onboarding steps
+### Only when all the above is sorted should you proceed with the actual onboarding steps
 [Add Your GCP Project to Prisma Cloud](https://docs.paloaltonetworks.com/prisma/prisma-cloud/prisma-cloud-admin/connect-your-cloud-platform-to-prisma-cloud/onboard-your-gcp-account/add-your-gcp-projects-to-prisma-cloud.html)
 
 Complete Steps 1-6
