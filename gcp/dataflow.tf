@@ -20,7 +20,7 @@ variable "custom_role_flowlog_compression_permissions_project" {
 ##############################
 resource "google_project_iam_custom_role" "prisma_cloud_custom_role_flowlog_compression" {
   project     = var.project_id
-  count       = var.flowlog_compression_project != "" ? 1 : 0
+  count       = var.flowlog_compression_project != "enabled" ? 1 : 0
   role_id     = "prismaCloudFlowLogCompressor${random_string.unique_id.result}"
   title       = "Prisma Cloud Flow Logs Compressor ${random_string.unique_id.result}"
   description = "This is a custom role created for Prisma Cloud. Contains granular permission which is needed for flow logs compression"
