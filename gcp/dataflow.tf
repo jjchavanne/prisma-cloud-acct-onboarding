@@ -10,7 +10,7 @@ variable "custom_role_flowlog_compression_permissions_project" {
     "compute.networks.create",
     "compute.subnetworks.create",
     "compute.firewalls.create",
-    "compute.networks.updatepolicy"
+    "compute.networks.updatePolicy"
   ]
 }
 
