@@ -2,11 +2,12 @@
 Doc ref: [Onboard Your Google Cloud Platform (GCP) Account](https://docs.paloaltonetworks.com/prisma/prisma-cloud/prisma-cloud-admin/connect-your-cloud-platform-to-prisma-cloud/onboard-your-gcp-account.html)
 
 ## What you'll need (NEEDS FURTHER REVIEW AND TESTING):
-1. The ID of the project(s) you intend to onboard
-2. Google Cloud Storage Bucket and it's name (if enabling vpc flow logs)
-3. Dataflow API enabled and role & role binding assigned to Prisma Cloud service account
-4. Decision as to where to execute the terraform script from (if Cloud Shell is not an option due to company security policy)
-5. Review and disable any APIs in the script you do NOT want enabled (possibly due to company security policies)
+1. The Prisma Cloud Account Group you intend to add this Cloud Account to (see main README, [section 2.1](../README.md))
+2. The ID of the project(s) you intend to onboard
+3. Google Cloud Storage Bucket and it's name (if enabling vpc flow logs)
+4. Dataflow API enabled and role & role binding assigned to Prisma Cloud service account
+5. Decision as to where to execute the terraform script from (if Cloud Shell is not an option due to company security policy)
+6. Review and disable any APIs in the script you do NOT want enabled (possibly due to company security policies)
 
 ## NOTES:
 ### Manual steps (as of now) - all these steps are optional
