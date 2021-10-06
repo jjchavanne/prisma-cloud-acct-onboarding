@@ -15,7 +15,8 @@ The updated code snippet is taken directly from here: https://registry.terraform
 - NOTE: Several changes have been made from the above example.
   - Added a new VNET
   - Changed the Retention period to 15 days (per Prisma Cloud doc recommendation).
-  - **YOU** must additionally change the Storage Account name as it **Must be unique across Azure**
+  - **YOU** must additionally change the Storage Account name as it **Must be unique across Azure**.    
+  Replace `"ReplaceMustBeUnique"` below.
   - In this example, we've also removed the log anayltics pieces from the original terraform example (as this could create additional costs).  This is optional.
 Edit the code snippet:
 ```
@@ -73,3 +74,10 @@ resource "azurerm_network_watcher_flow_log" "test" {
   }
 }
 ```
+Run terraform commands to apply changes:
+`terraform init`
+`terraform apply`
+
+### Onboard Account to Azure
+Follow the steps here: [Add Azure Subscription to Prisma Cloud](https://docs.paloaltonetworks.com/prisma/prisma-cloud/prisma-cloud-admin/connect-your-cloud-platform-to-prisma-cloud/onboard-your-azure-account/add-azure-cloud-account-on-prisma-cloud.html).  
+NOTE: Regarding the step to "Ingest & Monitor Network Security Group flow logs", if you followed the terraform script above, you have already completed this section.
