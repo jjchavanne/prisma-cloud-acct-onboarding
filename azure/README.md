@@ -1,24 +1,23 @@
 # Azure Cloud Account Onboarding
 
-## Add additional infrastructure
-We will build on the Terraform Getting Started tutorials from the main section.
+Before onboarding, you need to decide what options you want to enable first, 
 
-### OPTION 1 - If using NSG Flow Logs
-1. Verify or enable Network Watcher & Insights Provider: https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-nsg-flow-logging-portal#enable-network-watcher
-2. Enable NSG Flow Logs: Terraform Ref: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_watcher_flow_log
-3. Create a Storage Account for NGS Flow Logs.  Terraform Ref: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/storage_account
-4. 
+## Enabling NSG Flow Logs
+This is optional, however enabling NSG Flow Logs are highly recommended and a secuirty best practice.  Note however, separate NSG Flow Logs are required for each region corresponding with a storage account per NSG in the same region.  For the example below, we are only enabling a single region for demonstration purposes.
 
-### OPTION 2 - Create NSG Flow Log from single terraform file change
-With this option, we will update our original terraform file from the Getting Started tutorial.
+### NSG Flow Logs - OPTION 1: Manually via the Azure Console
+Complete Steps 7-10 from: [Setup Your Azure Subscription for Prisma Cloud](https://docs.paloaltonetworks.com/prisma/prisma-cloud/prisma-cloud-admin/connect-your-cloud-platform-to-prisma-cloud/onboard-your-azure-account/set-up-your-azure-account.html#id3c86dfb2-8ffb-4a60-9416-f15c5cec3ed6)
+
+### NSG Flow Logs - OPTION 2 - Create NSG Flow Log from single terraform file change
+With this option, we will update our original terraform file from the Terraform Getting Started tutorial.
 The updated code snippet is taken directly from here: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_watcher_flow_log
 - NOTE: Several changes have been made from the above example.
   - Added a new VNET
   - Changed the Retention period to 15 days (per Prisma Cloud doc recommendation).
-  - **YOU** must additionally change the Storage Account name as it **Must be unique across Azure**.    
-  Replace `"ReplaceMustBeUnique"` below.
-  - In this example, we've also removed the log anayltics pieces from the original terraform example (as this could create additional costs).  This is optional.
-Edit the code snippet:
+  - **YOU** must additionally change the Storage Account name as it **Must be unique across Azure**. Replace `"ReplaceMustBeUnique"` under the resource "azurerm_storage_account" below.
+  - In this example, we've also removed the log anayltics pieces from the original terraform example (as this could create additional costs).  This is optional.   
+
+Copy and Edit the code snippet in your environment as needed:
 ```
 resource "azurerm_resource_group" "test" {
   name     = "myPCResourceGroup"
@@ -74,10 +73,11 @@ resource "azurerm_network_watcher_flow_log" "test" {
   }
 }
 ```
-Run terraform commands to apply changes:
-`terraform init`
-`terraform apply`
+Run terraform commands to apply changes:   
+`terraform init`  
+`terraform apply`  
+Type **yes** to apply changes
 
 ### Onboard Account to Azure
-Follow the steps here: [Add Azure Subscription to Prisma Cloud](https://docs.paloaltonetworks.com/prisma/prisma-cloud/prisma-cloud-admin/connect-your-cloud-platform-to-prisma-cloud/onboard-your-azure-account/add-azure-cloud-account-on-prisma-cloud.html).  
-NOTE: Regarding the step to "Ingest & Monitor Network Security Group flow logs", if you followed the terraform script above, you have already completed this section.
+Follow the steps here: [Add Azure Subscription to Prisma Cloud](https://docs.paloaltonetworks.com/prisma/prisma-cloud/prisma-cloud-admin/connect-your-cloud-platform-to-prisma-cloud/onboard-your-azure-account/add-azure-cloud-account-on-prisma-cloud.html).   
+NOTE: Regarding the step to "Ingest & Monitor Network Security Group flow logs", you should have already completed this section as per the NSG Flow Log steps above.
