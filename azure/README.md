@@ -1,8 +1,6 @@
 # Azure Cloud Account Onboarding
 
-**Goal:** Fast & Easy Onboarding
-   
-These instructions are simply to help speed the cloud account onboarding process by supplementing the current [Prisma Cloud Azure onboarding documentation](https://docs.paloaltonetworks.com/prisma/prisma-cloud/prisma-cloud-admin/connect-your-cloud-platform-to-prisma-cloud/onboard-your-azure-account/add-azure-cloud-account-on-prisma-cloud.html) with some additional automation advice and helpful tips.
+**Goal:** Fast & Easy Azure Cloud Account Onboarding
 
 ## Prerequisites:
 
@@ -14,10 +12,10 @@ These instructions are simply to help speed the cloud account onboarding process
 ## Enabling NSG Flow Logs
 This is optional, however enabling NSG Flow Logs are highly recommended and a secuirty best practice.  Note however, separate NSG Flow Logs are required for each region corresponding with a storage account per NSG in the same region.  For the example below, we are only enabling a single region for demonstration purposes.   NOTE: If you are not prepared to do this now, you can [Update an Onboarded Azure Cloud Account] and enable NSG Flow Logs at a later time.
 
-### NSG Flow Logs - OPTION 1: Manually via the Azure Console
+### OPTION 1: Manual - via the Azure Console
 Complete Steps 7-10 from: [Setup Your Azure Subscription for Prisma Cloud](https://docs.paloaltonetworks.com/prisma/prisma-cloud/prisma-cloud-admin/connect-your-cloud-platform-to-prisma-cloud/onboard-your-azure-account/set-up-your-azure-account.html#id3c86dfb2-8ffb-4a60-9416-f15c5cec3ed6).  
 
-### NSG Flow Logs - OPTION 2 - Create NSG Flow Log from single terraform file change
+### OPTION 2: Automated - via Terraform
 With this option, we will update our original terraform file from the Terraform Getting Started tutorial.
 The updated code snippet is taken directly from here: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_watcher_flow_log
 - NOTE: Several changes have been made from the above example.
