@@ -6,8 +6,8 @@ These instructions are simply to help speed the cloud account onboarding process
 
 ## Prerequisites:
 
-1. Completed the [Prereqs](https://github.com/jjchavanne/prisma-cloud-acct-onboarding/blob/main/README.md#prerequisities) on the Main README page.
-2. Know which Account Group you will use.
+1. Completed the [Prerequisites](https://github.com/jjchavanne/prisma-cloud-acct-onboarding/blob/main/README.md#1----prerequisities--assumptions) on the Main README page.
+2. Know which [Account Group](https://docs.paloaltonetworks.com/prisma/prisma-cloud/prisma-cloud-admin/manage-prisma-cloud-administrators/create-account-groups) you will use for this particular Cloud Account.
 3. Completed the relevant [Terraform Getting Started Tutorials](https://github.com/jjchavanne/prisma-cloud-acct-onboarding#21---identify-or-create-prisma-cloud-account-groups) or have equivalent Terraform knowledge.
 4. Decide if you want to enable Azure NSG (Network Security Group) Flow Logs.
 
