@@ -6,9 +6,10 @@ These instructions are simply to help speed the cloud account onboarding process
 
 ## Prerequisites:
 
-1. [Identify or Create Prisma Cloud Account Group](https://github.com/jjchavanne/prisma-cloud-acct-onboarding#21---identify-or-create-prisma-cloud-account-groups)
-2. Completed the relevant [Terraform Getting Started Tutorials](https://github.com/jjchavanne/prisma-cloud-acct-onboarding#21---identify-or-create-prisma-cloud-account-groups) or have equivalent Terraform knowledge.
-3. Decide if you want to enable Azure NSG (Network Security Group) Flow Logs.
+1. Completed the [Prereqs](https://github.com/jjchavanne/prisma-cloud-acct-onboarding/blob/main/README.md#prerequisities) on the Main README page.
+2. Know which Account Group you will use.
+3. Completed the relevant [Terraform Getting Started Tutorials](https://github.com/jjchavanne/prisma-cloud-acct-onboarding#21---identify-or-create-prisma-cloud-account-groups) or have equivalent Terraform knowledge.
+4. Decide if you want to enable Azure NSG (Network Security Group) Flow Logs.
 
 ## Enabling NSG Flow Logs
 This is optional, however enabling NSG Flow Logs are highly recommended and a secuirty best practice.  Note however, separate NSG Flow Logs are required for each region corresponding with a storage account per NSG in the same region.  For the example below, we are only enabling a single region for demonstration purposes.   NOTE: If you are not prepared to do this now, you can [Update an Onboarded Azure Cloud Account] and enable NSG Flow Logs at a later time.
