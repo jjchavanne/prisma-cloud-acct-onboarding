@@ -10,7 +10,9 @@
 4. Decide if you want to enable Azure NSG (Network Security Group) Flow Logs.
 
 ## Enabling NSG Flow Logs
-This is optional, however enabling NSG Flow Logs are highly recommended and a secuirty best practice.  Note however, separate NSG Flow Logs are required for each region corresponding with a storage account per NSG in the same region.  For the example below, we are only enabling a single region for demonstration purposes.   NOTE: If you are not prepared to do this now, you can [Update an Onboarded Azure Cloud Account] and enable NSG Flow Logs at a later time.
+This is optional, however enabling NSG Flow Logs are highly recommended and a secuirty best practice.  Note however, separate NSG Flow Logs are required for each region corresponding with a storage account per NSG in the same region.  
+   
+For the example below, we are only enabling a single region for demonstration purposes.  If you are not prepared to do this now, you can [Update an Onboarded Azure Cloud Account](https://docs.paloaltonetworks.com/prisma/prisma-cloud/prisma-cloud-admin/connect-your-cloud-platform-to-prisma-cloud/onboard-your-azure-account/update-an-onboarded-azure-account.html) and enable NSG Flow Logs at a later time.
 
 ### OPTION 1: Manual - via the Azure Console
 Complete Steps 7-10 from: [Setup Your Azure Subscription for Prisma Cloud](https://docs.paloaltonetworks.com/prisma/prisma-cloud/prisma-cloud-admin/connect-your-cloud-platform-to-prisma-cloud/onboard-your-azure-account/set-up-your-azure-account.html#id3c86dfb2-8ffb-4a60-9416-f15c5cec3ed6).  
@@ -83,15 +85,27 @@ resource "azurerm_network_watcher_flow_log" "test" {
 Run terraform commands to apply changes:   
 `terraform init`  
 `terraform apply`  
-Type **yes** to apply changes
+   
+Type `yes` to apply changes
 
 ## Onboard Account to Azure
 Complete the [Add Azure Subscription to Prisma Cloud](https://docs.paloaltonetworks.com/prisma/prisma-cloud/prisma-cloud-admin/connect-your-cloud-platform-to-prisma-cloud/onboard-your-azure-account/add-azure-cloud-account-on-prisma-cloud.html) steps.   
+   
 NOTE: Regarding the step to "Ingest & Monitor Network Security Group flow logs", you should have already completed this section as per the NSG Flow Log steps above.
+
+## Troubleshooting
+Onboarding Issues: [Troubleshoot Azure Account Onboarding](https://docs.paloaltonetworks.com/prisma/prisma-cloud/prisma-cloud-admin/connect-your-cloud-platform-to-prisma-cloud/onboard-your-azure-account/troubleshoot-azure-account-onboarding.html)
+   
+Terraform Issues: [Troubleshoot common problems when using Terraform on Azure](https://docs.microsoft.com/en-us/azure/developer/terraform/troubleshoot)
+   
+Other Common Issues, noting that each environment is unique.
+- Ensure all proper authentication.
+- Keep things simple and avoid going through Proxies if possible.
+- If you get an error message you don't understand, Google it.  Often someone else will have posted about a similar error message as well.
 
 ---
 
-### Congratulations!!! You onboarded an Azure Cloud Account to Prisma Cloud
+### Congratulations!!!  You onboarded an Azure Cloud Account to Prisma Cloud
 As it mentions in the last step of the Prisma Cloud doc, you need to wait some time before the ingestion of data completes.   
 This is a great time to get lunch, take a nap, or whatever else you might enjoy during this time.   
    
