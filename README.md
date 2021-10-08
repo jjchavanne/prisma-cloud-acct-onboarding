@@ -44,6 +44,6 @@ Follow the relevant Hashicorp Terraform ***'Build Infrastructure'*** & ***'Chang
 
 Onboard your relevant Cloud Account(s) to Prisma Cloud:
 * Amazon
-* Azure
-* GCP
+* [Azure](azure)
+* [GCP](gcp)
 
