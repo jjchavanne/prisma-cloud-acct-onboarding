@@ -1,5 +1,14 @@
 # Onboarding Cloud Accounts to Prisma Cloud
-Instructions for onboarding cloud accounts to Prisma Cloud that includes optional directions on setting up New Cloud Infrastructure with Terraform.
+
+**Goal:** Fast & Easy Onboarding
+
+These instructions are simply to help speed the cloud account onboarding process by supplementing the current [Prisma Cloud onboarding documentation](https://docs.paloaltonetworks.com/prisma/prisma-cloud/prisma-cloud-admin/connect-your-cloud-platform-to-prisma-cloud/cloud-account-onboarding.html) with some additional automation advice, examples, and helpful tips.
+
+## Prerequisities
+
+1. Have [Access to a Prisma Cloud Tenant](https://docs.paloaltonetworks.com/prisma/prisma-cloud/prisma-cloud-admin/get-started-with-prisma-cloud/access-prisma-cloud.html).
+2. Have been assigned one of the [Prisma Cloud Roles](https://docs.paloaltonetworks.com/prisma/prisma-cloud/prisma-cloud-admin/manage-prisma-cloud-administrators/prisma-cloud-administrator-roles.html) that allows Cloud Account Onboarding.
+3. Have identified which Prisma Cloud **Account Group** you will assign your Public Cloud Account to or [Create an Account Group on Prisma Cloud](https://docs.paloaltonetworks.com/prisma/prisma-cloud/prisma-cloud-admin/manage-prisma-cloud-administrators/create-account-groups).
 
 ## Objectives:
 1. [Create New Infrastrucutre](#head1) using Terraform to setup new cloud infrastructure across various major cloud providers (optional)
