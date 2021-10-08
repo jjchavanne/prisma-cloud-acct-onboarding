@@ -32,5 +32,8 @@ Follow the relevant Hashicorp Terraform ***'Build Infrastructure'*** & ***'Chang
 
 ## 2 - <a name="head2"></a> Onboarding Cloud Accounts
 
-Onboard your Cloud Account(s) to Prisma Cloud by following: [Cloud Account Onboarding](https://docs.paloaltonetworks.com/prisma/prisma-cloud/prisma-cloud-admin/connect-your-cloud-platform-to-prisma-cloud/cloud-account-onboarding.html).
+Onboard your relevant Cloud Account(s) to Prisma Cloud:
+* Amazon
+* Azure
+* GCP
 
