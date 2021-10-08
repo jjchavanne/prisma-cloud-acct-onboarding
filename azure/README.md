@@ -1,4 +1,4 @@
-# Azure Cloud Account Onboarding
+# Azure Cloud Account (Subscription Only) Onboarding
 
 **Goal:** Fast & Easy Azure Cloud Account Onboarding
 
