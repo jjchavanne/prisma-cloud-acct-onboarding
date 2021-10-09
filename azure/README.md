@@ -2,14 +2,19 @@
 
 **Goal:** Fast & Easy Azure Cloud Account Onboarding
    
-## 1 - Getting Started 
+1 - [Getting Started](#head1)   
+2 - [Enabling NSG Flow Logs - Optional but Highly Recommended](#head2)   
+3 - [Onboard Account to Azure](#head3)   
+4 - [Troubleshooting](#head4)   
+   
+## 1 - <a name="head1"></a> Getting Started 
 Before onboarding you must do the following:
    
 1. Ensure you have met the [Prerequisites on the Main README page](../README.md#1----prerequisities--assumptions).
 2. Know which [Account Group](https://docs.paloaltonetworks.com/prisma/prisma-cloud/prisma-cloud-admin/manage-prisma-cloud-administrators/create-account-groups) you will assign this particular Cloud Account.
 3. Decide if you want to ingest Azure NSG (Network Security Group) Flow Logs.
 
-## 2 - Enabling NSG Flow Logs 
+## 2 - <a name="head2"></a> Enabling NSG Flow Logs 
 This is optional and can be [updated later](https://docs.paloaltonetworks.com/prisma/prisma-cloud/prisma-cloud-admin/connect-your-cloud-platform-to-prisma-cloud/onboard-your-azure-account/update-an-onboarded-azure-account.html), however enabling NSG Flow Logs are **highly recommended and a security best practice**.
    
 - **IMPORTANT NOTE:** Separate NSG Flow Logs are required for each region corresponding with a storage account per NSG in the same region.  
@@ -91,12 +96,12 @@ Run terraform commands to apply changes:
    
 Type `yes` to apply changes
 
-## Onboard Account to Azure
+## 3 - <a name="head3"></a> Onboard Account to Azure
 Complete the [Add Azure Subscription to Prisma Cloud](https://docs.paloaltonetworks.com/prisma/prisma-cloud/prisma-cloud-admin/connect-your-cloud-platform-to-prisma-cloud/onboard-your-azure-account/add-azure-cloud-account-on-prisma-cloud.html) steps.   
    
 NOTE: Regarding the step to "Ingest & Monitor Network Security Group flow logs", you should have already completed this section as per the NSG Flow Log steps above.
 
-## Troubleshooting
+## 4 - <a name="head4"></a> Troubleshooting
 Onboarding Issues: [Troubleshoot Azure Account Onboarding](https://docs.paloaltonetworks.com/prisma/prisma-cloud/prisma-cloud-admin/connect-your-cloud-platform-to-prisma-cloud/onboard-your-azure-account/troubleshoot-azure-account-onboarding.html)
    
 Terraform Issues: [Troubleshoot common problems when using Terraform on Azure](https://docs.microsoft.com/en-us/azure/developer/terraform/troubleshoot)
