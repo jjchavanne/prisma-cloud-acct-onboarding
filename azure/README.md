@@ -19,26 +19,24 @@ This is optional and can be [updated later](https://docs.paloaltonetworks.com/pr
    
 - **IMPORTANT NOTE:** Separate NSG Flow Logs are required for each region corresponding with a storage account per NSG in the same region.  
    
-For the example below, we are only enabling a single region for demonstration purposes.
-
 ### OPTION 1: Manual - via the Azure Console
 Complete Steps 7-10 from: [Setup Your Azure Subscription for Prisma Cloud](https://docs.paloaltonetworks.com/prisma/prisma-cloud/prisma-cloud-admin/connect-your-cloud-platform-to-prisma-cloud/onboard-your-azure-account/set-up-your-azure-account.html#id3c86dfb2-8ffb-4a60-9416-f15c5cec3ed6).  
 
 ### OPTION 2: Automated - via Terraform (Recommended Option)
-With this option, you can use the below code snippet as a template and run Terraform to apply all changes.
+With this option, you can use the below code snippet as a template and run Terraform to apply all changes.  Note, we are only enabling a single region for demonstration purposes, however you can easily replicate the resources to create mutiple NSGs for mutiple regions.
 
 As mentioned in the [Terraform Azure Build Infrastrucutre Tutorial](https://learn.hashicorp.com/tutorials/terraform/azure-build?in=terraform/azure-get-started#prerequisites).  
 Ensure you:
 1. Have Terraform installed.
 2. Can authenticate via the Azure CLI to your Cloud Account.
 
-This code snippet is taken directly from the [Terraform Registry](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_watcher_flow_log) with several modifications:
+The below code snippet is taken directly from the [Terraform Registry](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_watcher_flow_log) with several modifications:
    - Added Azure Provider
    - Added a new VNET
    - Changed the Retention period to 15 days (per Prisma Cloud doc recommendation).
    - Removed the log anayltics pieces (as this could create additional costs).  This is optional.   
    
-Copy and Edit the code snippet in your environment, noting that **YOU** must change the Storage Account name as it **Must be unique across Azure**.
+Copy and Edit the code snippet in your environment OR Clone this repo and edit the main.tf file in this folder, noting that **YOU** must change the Storage Account name as it **Must be unique across Azure**.
 - Replace `"ReplaceMustBeUnique"` under the resource "azurerm_storage_account" below.
 
 ```
@@ -87,6 +85,7 @@ resource "azurerm_network_watcher" "test" {
   resource_group_name = azurerm_resource_group.test.name
 }
 
+# REPLACE "ReplaceMustBeUnique" WITH A UNIQUE STORAGE ACCOUNT NAME
 resource "azurerm_storage_account" "test" {
   name                = "ReplaceMustBeUnique"
   resource_group_name = azurerm_resource_group.test.name
