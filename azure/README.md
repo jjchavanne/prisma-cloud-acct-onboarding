@@ -25,17 +25,39 @@ For the example below, we are only enabling a single region for demonstration pu
 Complete Steps 7-10 from: [Setup Your Azure Subscription for Prisma Cloud](https://docs.paloaltonetworks.com/prisma/prisma-cloud/prisma-cloud-admin/connect-your-cloud-platform-to-prisma-cloud/onboard-your-azure-account/set-up-your-azure-account.html#id3c86dfb2-8ffb-4a60-9416-f15c5cec3ed6).  
 
 ### OPTION 2: Automated - via Terraform (Recommended Option)
-With this option, you can use the below code snippet as a template.  If you used the original terraform file from the Terraform Get Started tutorial, you can simply append this template and make the minor adjustments mentioned below.
+With this option, you can use the below code snippet as a template and run Terraform to apply all changes.
+
+As mentioned in the [Terraform Azure Build Infrastrucutre Tutorial](https://learn.hashicorp.com/tutorials/terraform/azure-build?in=terraform/azure-get-started#prerequisites).  
+Ensure you:
+1. Have Terraform installed.
+2. Can authenticate via the Azure CLI to your Cloud Account.
 
 This code snippet is taken directly from the [Terraform Registry](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_watcher_flow_log) with several modifications:
-  - Added a new VNET
-  - Changed the Retention period to 15 days (per Prisma Cloud doc recommendation).
-  - Removed the log anayltics pieces (as this could create additional costs).  This is optional.   
+   - Added Azure Provider
+   - Added a new VNET
+   - Changed the Retention period to 15 days (per Prisma Cloud doc recommendation).
+   - Removed the log anayltics pieces (as this could create additional costs).  This is optional.   
    
 Copy and Edit the code snippet in your environment, noting that **YOU** must change the Storage Account name as it **Must be unique across Azure**.
 - Replace `"ReplaceMustBeUnique"` under the resource "azurerm_storage_account" below.
 
 ```
+# Configure the Azure provider
+terraform {
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "~> 2.65"
+    }
+  }
+
+  required_version = ">= 0.14.9"
+}
+
+provider "azurerm" {
+  features {}
+}
+
 resource "azurerm_resource_group" "test" {
   name     = "myPCResourceGroup"
   location = "eastus2"
@@ -90,6 +112,7 @@ resource "azurerm_network_watcher_flow_log" "test" {
   }
 }
 ```
+   
 Run terraform commands to apply changes:   
 `terraform init`  
 `terraform apply`  
