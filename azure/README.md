@@ -10,7 +10,7 @@ Before onboarding you must do the following:
 3. Decide if you want to ingest Azure NSG (Network Security Group) Flow Logs.
 
 ## 2 - Enabling NSG Flow Logs 
-This is optional and can be [updated later](https://docs.paloaltonetworks.com/prisma/prisma-cloud/prisma-cloud-admin/connect-your-cloud-platform-to-prisma-cloud/onboard-your-azure-account/update-an-onboarded-azure-account.html), however enabling NSG Flow Logs are highly recommended and a secuirty best practice.
+This is optional and can be [updated later](https://docs.paloaltonetworks.com/prisma/prisma-cloud/prisma-cloud-admin/connect-your-cloud-platform-to-prisma-cloud/onboard-your-azure-account/update-an-onboarded-azure-account.html), however enabling NSG Flow Logs are **highly recommended and a security best practice**.
    
 - **IMPORTANT NOTE:** Separate NSG Flow Logs are required for each region corresponding with a storage account per NSG in the same region.  
    
@@ -19,16 +19,17 @@ For the example below, we are only enabling a single region for demonstration pu
 ### OPTION 1: Manual - via the Azure Console
 Complete Steps 7-10 from: [Setup Your Azure Subscription for Prisma Cloud](https://docs.paloaltonetworks.com/prisma/prisma-cloud/prisma-cloud-admin/connect-your-cloud-platform-to-prisma-cloud/onboard-your-azure-account/set-up-your-azure-account.html#id3c86dfb2-8ffb-4a60-9416-f15c5cec3ed6).  
 
-### OPTION 2: Automated - via Terraform
-With this option, we will update our original terraform file from the Terraform Getting Started tutorial.
-The updated code snippet is taken directly from here: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_watcher_flow_log
-- NOTE: Several changes have been made from the above example.
+### OPTION 2: Automated - via Terraform (Recommended Option)
+With this option, you can use the below code snippet as a template.  If you used the original terraform file from the Terraform Get Started tutorial, you can simply append this template and make the minor adjustments mentioned below.
+
+This code snippet is taken directly from the [Terraform Registry](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_watcher_flow_log) with several modifications:
   - Added a new VNET
   - Changed the Retention period to 15 days (per Prisma Cloud doc recommendation).
-  - **YOU** must additionally change the Storage Account name as it **Must be unique across Azure**. Replace `"ReplaceMustBeUnique"` under the resource "azurerm_storage_account" below.
-  - In this example, we've also removed the log anayltics pieces from the original terraform example (as this could create additional costs).  This is optional.   
+  - Removed the log anayltics pieces (as this could create additional costs).  This is optional.   
+   
+Copy and Edit the code snippet in your environment, noting that **YOU** must change the Storage Account name as it **Must be unique across Azure**.
+- Replace `"ReplaceMustBeUnique"` under the resource "azurerm_storage_account" below.
 
-Copy and Edit the code snippet in your environment as needed:
 ```
 resource "azurerm_resource_group" "test" {
   name     = "myPCResourceGroup"
