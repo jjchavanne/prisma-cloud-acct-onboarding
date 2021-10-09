@@ -27,7 +27,7 @@ NOTE: At a minimum, complete up and through the *Change Infrastrucutre* Tutorial
    
 If you already have this knowledge, skip directly to [Section 3 - Onboarding Cloud Accounts](#head3)
 
-If you are not familiar with Terraform, it is one of the most widely used **Infrastructure as Code** open source software tools.  Use of IaC is highly recommended vs. enabling infrastrucutre manually through a console or Cloud CLI directly.  A major benefit of Terraform is being cloud agnostic which means it can be used across all the major cloud providers and even Docker.  Terraform is a great choice for **IaC tooling**. 
+If you are not familiar with Terraform, it is one of the most widely used **Infrastructure as Code** open source software tools.  Use of IaC is highly recommended vs. enabling infrastrucutre manually through a console or Cloud CLI directly.  A major benefit of Terraform is being cloud agnostic which means it can be used across all the major cloud providers and even Docker, making Terraform is a great choice for **IaC tooling**. 
 
 ### 2.1 - Terraform Setup & Prerequisities
 
