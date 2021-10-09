@@ -1,18 +1,20 @@
 # Azure Cloud Account (Subscription Only) Onboarding
 
 **Goal:** Fast & Easy Azure Cloud Account Onboarding
-
-## Prerequisites:
-
-1. Completed the [Prerequisites](../README.md#1----prerequisities--assumptions) on the Main README page.
-2. Know which [Account Group](https://docs.paloaltonetworks.com/prisma/prisma-cloud/prisma-cloud-admin/manage-prisma-cloud-administrators/create-account-groups) you will use for this particular Cloud Account.
-3. Completed the relevant [Terraform Getting Started Tutorials](https://learn.hashicorp.com/terraform) or have equivalent Terraform knowledge.
-4. Decide if you want to enable Azure NSG (Network Security Group) Flow Logs.
-
-## Enabling NSG Flow Logs
-This is optional, however enabling NSG Flow Logs are highly recommended and a secuirty best practice.  Note however, separate NSG Flow Logs are required for each region corresponding with a storage account per NSG in the same region.  
    
-For the example below, we are only enabling a single region for demonstration purposes.  If you are not prepared to do this now, you can [Update an Onboarded Azure Cloud Account](https://docs.paloaltonetworks.com/prisma/prisma-cloud/prisma-cloud-admin/connect-your-cloud-platform-to-prisma-cloud/onboard-your-azure-account/update-an-onboarded-azure-account.html) and enable NSG Flow Logs at a later time.
+## 1 - Getting Started 
+Before onboarding you must do the following:
+   
+1. Ensure you have met the [Prerequisites on the Main README page](../README.md#1----prerequisities--assumptions).
+2. Know which [Account Group](https://docs.paloaltonetworks.com/prisma/prisma-cloud/prisma-cloud-admin/manage-prisma-cloud-administrators/create-account-groups) you will assign this particular Cloud Account.
+3. Decide if you want to ingest Azure NSG (Network Security Group) Flow Logs.
+
+## 2 - Enabling NSG Flow Logs 
+This is optional and can be [updated later](https://docs.paloaltonetworks.com/prisma/prisma-cloud/prisma-cloud-admin/connect-your-cloud-platform-to-prisma-cloud/onboard-your-azure-account/update-an-onboarded-azure-account.html), however enabling NSG Flow Logs are highly recommended and a secuirty best practice.
+   
+- **IMPORTANT NOTE:** Separate NSG Flow Logs are required for each region corresponding with a storage account per NSG in the same region.  
+   
+For the example below, we are only enabling a single region for demonstration purposes.
 
 ### OPTION 1: Manual - via the Azure Console
 Complete Steps 7-10 from: [Setup Your Azure Subscription for Prisma Cloud](https://docs.paloaltonetworks.com/prisma/prisma-cloud/prisma-cloud-admin/connect-your-cloud-platform-to-prisma-cloud/onboard-your-azure-account/set-up-your-azure-account.html#id3c86dfb2-8ffb-4a60-9416-f15c5cec3ed6).  
