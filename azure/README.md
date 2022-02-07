@@ -13,16 +13,19 @@ Before onboarding you must do the following:
 1. Ensure you have met the [Prerequisites on the Main README page](../README.md#1----prerequisities--assumptions).
 2. Know which [Account Group](https://docs.paloaltonetworks.com/prisma/prisma-cloud/prisma-cloud-admin/manage-prisma-cloud-administrators/create-account-groups) you will assign this particular Cloud Account.
 3. Decide if you want to ingest Azure NSG (Network Security Group) Flow Logs.
+4. Obtain your Subscription ID & Tenant ID
+   * To find Subscrition ID: From **Home**, Select or search (from top bar) **'Subscriptions'**, select your subscription, and copy the Subscription ID.
+   * To find Tenant ID: From **Home**, Select or search (from top bar) **'Tenant Properties'** and copy the Tenant ID.
 
 ## 2 - <a name="head2"></a> Enabling NSG Flow Logs 
 This is optional and can be [updated later](https://docs.paloaltonetworks.com/prisma/prisma-cloud/prisma-cloud-admin/connect-your-cloud-platform-to-prisma-cloud/onboard-your-azure-account/update-an-onboarded-azure-account.html), however enabling NSG Flow Logs are **highly recommended and a security best practice**.
    
 - **IMPORTANT NOTE:** Separate NSG Flow Logs are required for each region corresponding with a storage account per NSG in the same region.  
    
-### OPTION 1: Manual - via the Azure Console
-Complete Steps 7-10 from: [Setup Your Azure Subscription for Prisma Cloud](https://docs.paloaltonetworks.com/prisma/prisma-cloud/prisma-cloud-admin/connect-your-cloud-platform-to-prisma-cloud/onboard-your-azure-account/set-up-your-azure-account.html#id3c86dfb2-8ffb-4a60-9416-f15c5cec3ed6).  
+### OPTION 1: Enabling via one of the Guides from Azure Docs 
+[Enabling NSG Flow Logs](https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-nsg-flow-logging-overview#enabling-nsg-flow-logs)  
 
-### OPTION 2: Automated - via Terraform (Recommended Option)
+### OPTION 2: Automated - via Terraform
 With this option, you can use the below code snippet as a template and run Terraform to apply all changes.  Note, we are only enabling a single region for demonstration purposes, however you can easily replicate the resources to create mutiple NSGs for mutiple regions.
 
 As mentioned in the [Terraform Azure Build Infrastrucutre Tutorial](https://learn.hashicorp.com/tutorials/terraform/azure-build?in=terraform/azure-get-started#prerequisites).  
